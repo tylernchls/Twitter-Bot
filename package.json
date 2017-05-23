@@ -1,8 +1,8 @@
 {
   "name": "Twitter-Bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A demo twitter bot",
+  "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tylernchls/Twitter-Bot/issues"
   },
-  "homepage": "https://github.com/tylernchls/Twitter-Bot#readme"
+  "homepage": "https://github.com/tylernchls/Twitter-Bot#readme",
+  "dependencies": {
+    "twit": "^2.2.5"
+  }
 }
