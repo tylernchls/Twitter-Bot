@@ -4,12 +4,12 @@ const fs = require('fs');
 const Twitter = new twit(CONFIG);
 const stream = Twitter.stream('user');
 
-const sendTweet = message => {
+function sendTweet() {
 
   let tweet = {
       status: message
   }
-  const catchError = (err, data, response) => {
+  function catchError(err, data, response) {
     if (err) {
       console.log('Something went wrong ' + err);
     } else {
@@ -20,7 +20,7 @@ const sendTweet = message => {
   Twitter.post('statuses/update', tweet, catchError());
 }
 
-const tweetEvent = tweetMsg => {
+function tweetEvent(tweetMsg) {
 
   const Twitter_Handle = tweetMsg.in_reply_to_screen_name;
   let msg_data = JSON.stringify(tweetMsg, null, 2)
@@ -34,7 +34,7 @@ const tweetEvent = tweetMsg => {
   }
 }
 
-const newFollower = eventMessage => {
+function newFollower(eventMessage) {
 
   let name = eventMessage.source.name;
   let user_screenName = eventMessage.source.screen_name;
